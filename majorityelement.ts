@@ -7,10 +7,14 @@ function majorityElement(nums: number[]) {
     for(let [key ,value]of hash){
       majority=Math.max(majority,value);
     }
-    for(let [key,value] of hash.entries()){
-      if(value===majority){
+   return getKeyFromValue(majority,hash)
+    
+};
+
+function getKeyFromValue(val,hashMap){
+   for(let [key,value] of hashMap.entries()){
+      if(value===val){
          return key;
       }
     }
-    
-};
+}
